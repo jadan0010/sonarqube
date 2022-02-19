@@ -35,7 +35,7 @@ pipeline {
 		//exclusion: exclude from scanning; source: files to scan; then give project name and key
           steps {
             withSonarQubeEnv(credentialsId: 'sonartoken', installationName: 'localsonar') {
-            bat "${SCANNER_HOME}/bin/sonar-scanner -Dsonar.projectKey=sonarjenkins -Dsonar.projectName=sonarjenkins -Dsonar.sources=src/ -Dsonar.java.binaries=target/classes/ -Dsonar.exclusions=src/test/java/****/*.java  -Dsonar.projectVersion=${BUILD_NUMBER}-${params.versionid}"
+            bat "${SCANNER_HOME}/bin/sonar-scanner -Dsonar.projectKey=jenkins-test -Dsonar.projectName=jenkins-test -Dsonar.sources=src/ -Dsonar.java.binaries=target/classes/ -Dsonar.exclusions=src/test/java/****/*.java  -Dsonar.projectVersion=${BUILD_NUMBER}-${params.versionid}"
             }
             }
         }
