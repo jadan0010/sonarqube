@@ -1,3 +1,4 @@
+<! pom file contains the plugin and depedency to run maven taks -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -9,17 +10,20 @@
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
+  <! To add junit plugin 4.13.2 it will download plug in C:\Users\jagan\.m2 folder-->
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.13.2</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <! this will have java version -->
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
   </properties>
+  <! this will be created when use maven project and this will download maven plugin-->
   <build>
     <pluginManagement>
       <plugins>
@@ -32,11 +36,12 @@
     </pluginManagement>
     <plugins>
       <plugin>
-        <!-- Build an executable JAR -->
+        <!-- Build an executable JAR. JAR Plugin is required -->
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
         <version>3.2.0</version>
         <configuration>
+          <! to archieve the artifects-->
           <archive>
             <manifest>
               <addClasspath>true</addClasspath>
@@ -46,6 +51,7 @@
           </archive>
         </configuration>
       </plugin>
+      <! enforcer plugin require-->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
