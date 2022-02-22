@@ -1,3 +1,5 @@
+// Jenkins file will have what is required for creating pipelie and pipeline stage and installation of tools like Sonarqube etc
+//Jenkins work with Pom file. Let say we do the build phase, it will ceck pom file and download required tools as per Pom file and do the build
 pipeline {
     agent any
     parameters {
@@ -10,7 +12,8 @@ pipeline {
        // maven 'Maven' 
         //jdk 'JAVA_17' 
     //}
-//Mvn –B DskiptTests clean package -> it will skip the test phase and do clean and do the package from java main folder file location in github
+//Mvn –B DskiptTests clean package -> it will skip the test phase and do clean and do the package from java main folder file location in github; 
+// it will check pom file to do the build
     stages {
         stage('Build') {
             steps {
