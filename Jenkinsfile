@@ -48,11 +48,13 @@ pipeline {
             }
             }
         }
-//default steps; 2 min to wait timeout for Quality gate check in sonarqube. quality to check code with vulnerablity condtions
+//create stage as squality gate and add 10 sec wait time before u  do next step
+	    
+// qualitygate to check code with vulnerablity condtions of code. It is part of sonarqube
         stage('Squality Gate') {
           steps {
                 sleep(10)  /* Added 10 sec sleep that was suggested in few places*/
-//this script will be executed if quality gate execution not finished in 10 sec with status is ok; if status is not ok, it wil print error message for quality gate failure	
+//This script will wait for 2 min to check qualitygate status verification.if status is not ok, it wil print error message for quality gate failure
                 script{
                     timeout(time: 2, unit: 'MINUTES') {
                         def qg = waitForQualityGate abortPipeline: true
