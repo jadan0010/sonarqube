@@ -8,7 +8,7 @@
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>my-app</name>
- <!--it will download maven from url below -->
+ <!-- it will download maven from url below -->
   <url>http://maven.apache.org</url>
  <!-- To add junit plugin 4.13.2 it will download plug in C:\Users\jagan\.m2 folder(your local); this required for test scope-->
   <dependencies>
@@ -26,7 +26,7 @@
     <maven.compiler.target>11</maven.compiler.target>
   </properties>
 <!-- Below plugin are required for build and it is coming under <build tag>this will be created when use maven project in eclise or vb code editor. -->
-<!--Basically this will download maven plugin; -->
+<!-- Basically this will download maven plugin; -->
   <build>
     <pluginManagement>
       <plugins>
