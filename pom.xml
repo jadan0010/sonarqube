@@ -1,16 +1,16 @@
-<! pom file contains the plugin and depedency to do mavern build tasks; this pom for maven 4.0 build -->
+<!-- pom file contains the plugin and depedency to do mavern build tasks; this pom for maven 4.0 build -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
- <! groupid is name we give, artifict id is the main one; we specifying my-app jar file to be created
+ <!-- groupid is name we give, artifict id is the main one; we specifying my-app jar file to be created
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>my-app</name>
- <!it will download maven from url below -->
+ <!--it will download maven from url below -->
   <url>http://maven.apache.org</url>
- <! To add junit plugin 4.13.2 it will download plug in C:\Users\jagan\.m2 folder(your local); this required for test scope-->
+ <!-- To add junit plugin 4.13.2 it will download plug in C:\Users\jagan\.m2 folder(your local); this required for test scope-->
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -19,14 +19,14 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-<! this will download java version if it is not in your pc -->
+<!-- this will download java version if it is not in your pc -->
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
   </properties>
-<! Below plugin are required for build and it is coming under <build tag>this will be created when use maven project in eclise or vb code editor. -->
-<!Basically this will download maven plugin; -->
+<!-- Below plugin are required for build and it is coming under <build tag>this will be created when use maven project in eclise or vb code editor. -->
+<!--Basically this will download maven plugin; -->
   <build>
     <pluginManagement>
       <plugins>
@@ -44,7 +44,7 @@
         <artifactId>maven-jar-plugin</artifactId>
         <version>3.2.0</version>
         <configuration>
-    <! to archieve the output artifects following required. These tags will be created by default when you maven project in eclise-->
+    <!-- to archieve the output artifects following required. These tags will be created by default when you maven project in eclise-->
           <archive>
             <manifest>
               <addClasspath>true</addClasspath>
@@ -54,7 +54,7 @@
           </archive>
         </configuration>
       </plugin>
-   <! enforcer plugin required to do the build and it will download that plugin-->
+   <!-- enforcer plugin required to do the build and it will download that plugin-->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
